@@ -2,7 +2,3 @@
 name = "Sudoku"
 version = "0.1.0"
 edition = "2024"
-
-[dependencies]
-glib-macros = "0.20.10"
-gtk = { version = "0.9.6", package = "gtk4" }

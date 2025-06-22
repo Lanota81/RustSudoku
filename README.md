@@ -1,2 +1,2 @@
 # RustSudoku
-A Sudoku game based on gtk4 library in Rust. 
+A simple Sudoku game based on Rust. 
