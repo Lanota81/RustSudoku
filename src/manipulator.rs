@@ -20,7 +20,7 @@ enum Commands {
     Set { x: u32, y: u32, num: u32 },
     /// Print current Sudoku
     Print,
-    /// Set difficulty(0-100), default is 0
+    /// Set difficulty(0-100), default is 50
     Diff { x: u32 },
 }
 

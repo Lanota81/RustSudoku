@@ -3,11 +3,17 @@ use std::time::{Duration, SystemTime};
 use rand::{self, random_bool, rng, seq::SliceRandom};
 use serde::{Serialize, Deserialize};
 
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Sudoku {
     data: [[u32; 9]; 9],
     seen: [[u32; 9]; 9],
     diff: f64,
+}
+
+impl Default for Sudoku {
+    fn default() -> Self {
+        Self { data: Default::default(), seen: Default::default(), diff: 0.5 }
+    }
 }
 
 impl Sudoku {
@@ -143,6 +149,12 @@ impl Sudoku {
             println!("{:?}", self.data[idx]);
         }
     }
+
+    #[allow(dead_code)]
+    pub fn data_ref(&self) -> &[[u32; 9]; 9] { &self.data }
+
+    #[allow(dead_code)]
+    pub fn seen_ref(&self) -> &[[u32; 9]; 9] { &self.seen } 
 
     pub fn print_cur(&self) {
         let r = &self.seen;
